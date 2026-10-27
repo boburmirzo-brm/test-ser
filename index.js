@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/health", (req, res) => {
-  res.json({ status: "ok", time: new Date().toISOString() });
+  res.json({ status: "You are alive!", time: new Date().toISOString() });
 });
 
 app.get("/hello/:name", (req, res) => {
