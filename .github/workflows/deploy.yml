@@ -20,13 +20,13 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             set -e
-            cd /opt/tg-bot
+            cd /opt/test-ser
             git pull origin main
-            docker build -t tg-bot:latest .
-            docker rm -f tg-bot
+            docker build -t test-ser:latest .
+            docker rm -f test-ser
             docker run -d \
-              --name tg-bot \
+              --name test-ser \
               --restart unless-stopped \
-              --env-file /opt/tg-bot/.env \
-              tg-bot:latest
+              --env-file /opt/test-ser/.env \
+              test-ser:latest
             docker image prune -f
