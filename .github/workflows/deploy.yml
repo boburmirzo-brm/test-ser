@@ -27,5 +27,6 @@ jobs:
             docker run -d \
               --name test-ser \
               --restart unless-stopped \
+              -p 3001:3000 \
               test-ser:latest
             docker image prune -f
