@@ -27,6 +27,5 @@ jobs:
             docker run -d \
               --name test-ser \
               --restart unless-stopped \
-              --env-file /opt/test-ser/.env \
               test-ser:latest
             docker image prune -f
